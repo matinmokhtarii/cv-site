@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matin Mokhtari | Digital Marketer & Web Developer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        .font-persian { font-family: 'Vazirmatn', sans-serif; }
+        .font-english { font-family: 'Inter', sans-serif; }
+        
+        .typing-animation::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-glass {
+            background: rgba(31, 41, 55, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .skill-bar {
+            transition: width 2s ease-in-out;
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* RTL Improvements */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .text-left { 
+            text-align: right !important; 
+        }
+        
+        [dir="rtl"] .text-right { 
+            text-align: left !important; 
+        }
+        
+        [dir="rtl"] .ml-auto { 
+            margin-left: 0 !important; 
+            margin-right: auto !important; 
+        }
+        
+        [dir="rtl"] .mr-auto { 
+            margin-right: 0 !important; 
+            margin-left: auto !important; 
+        }
+        
+        /* فیکس فاصله‌های RTL */
+        [dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+            --tw-space-x-reverse: 1;
+            margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+            margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+        }
+        
+        [dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]) {
+            --tw-space-x-reverse: 1;
+            margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+            margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+        }
+        
+        [dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+            --tw-space-x-reverse: 1;
+            margin-right: calc(1rem * var(--tw-space-x-reverse));
+            margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+        }
+        
+        [dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+            --tw-space-x-reverse: 1;
+            margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+            margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+        }
+        
+        /* فیکس مارجین‌های RTL */
+        [dir="rtl"] .mr-2 { margin-right: 0; margin-left: 0.5rem; }
+        [dir="rtl"] .mr-3 { margin-right: 0; margin-left: 0.75rem; }
+        [dir="rtl"] .mr-4 { margin-right: 0; margin-left: 1rem; }
+        [dir="rtl"] .ml-2 { margin-left: 0; margin-right: 0.5rem; }
+        [dir="rtl"] .ml-3 { margin-left: 0; margin-right: 0.75rem; }
+        [dir="rtl"] .ml-4 { margin-left: 0; margin-right: 1rem; }
+        
+        /* فیکس فلکس در RTL */
+        [dir="rtl"] .flex-row { flex-direction: row-reverse; }
+        [dir="rtl"] .justify-between { justify-content: space-between; }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; line-height: 1.2; }
+            .hero-subtitle { font-size: 1.25rem; }
+            .section-title { font-size: 2rem; }
+            .card-title { font-size: 1.25rem; }
+            
+            [dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+                margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+                margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+            }
+        }
+        
+        /* Navigation improvements */
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(17, 24, 39, 0.9);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #764ba2;
+        }
+        
+        /* Profile Image Styles */
+        .profile-image {
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#667eea',
+                        secondary: '#764ba2',
+                    },
+                    fontFamily: {
+                        'persian': ['Vazirmatn', 'sans-serif'],
+                        'english': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-900 text-white font-english overflow-x-hidden">
+    <!-- Language Toggle Button -->
+    <button id="languageToggle" class="fixed top-4 right-4 z-50 bg-primary hover:bg-secondary text-white px-4 py-2 rounded-full shadow-lg transition-all duration-300 text-base">
+        <i class="fas fa-language ltr:mr-2 rtl:ml-2"></i>
+        <span id="langText">فارسی</span>
+    </button>
+
+    <!-- Mobile Navigation Toggle -->
+    <button id="mobileMenuToggle" class="fixed top-4 left-4 z-50 lg:hidden bg-gray-800 text-white p-3 rounded-full shadow-lg">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navigation Sidebar -->
+    <nav id="sidebar" class="fixed top-0 left-0 h-full w-72 bg-gray-800 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40 nav-blur">
+        <div class="p-6 h-full overflow-y-auto">
+            <!-- Profile Section -->
+            <div class="text-center mb-8 pt-4">
+                <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 floating shadow-2xl border-4 border-primary">
+                    <img src="https://pfst.cf2.poecdn.net/base/image/5dd8459992b1ea5de2cc6e3deb930eb3c2731c28e9155482f616a2fdab975248?w=960&h=1280" 
+                         alt="Matin Mokhtari" 
+                         class="w-full h-full profile-image">
+                </div>
+                <h3 class="text-xl font-bold mb-1">Matin Mokhtari</h3>
+                <p class="text-gray-400 text-sm mb-4" data-en="Digital Marketer & Web Developer" data-fa="بازاریاب دیجیتال و توسعه‌دهنده وب">Digital Marketer & Web Developer</p>
+                
+                <!-- Social Links with RTL Fix -->
+                <div class="flex justify-center rtl:space-x-reverse space-x-3">
+                    <a href="https://linkedin.com/in/matinmokhtari" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-linkedin text-lg"></i>
+                    </a>
+                    <a href="https://matinmok.github.io/cv-site/" target="_blank" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fas fa-globe text-lg"></i>
+                    </a>
+                    <a href="mailto:matinmok02@gmail.com" class="text-red-400 hover:text-red-300 transition-colors">
+                        <i class="fas fa-envelope text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <ul class="space-y-2">
+                <li><a href="#home" class="nav-link flex items-center px-4 py-3 rounded-lg hover:bg-gray-700 transition-colors group">
+                    <i class="fas fa-home ltr:mr-3 rtl:ml-3 group-hover:text-primary transition-colors"></i>
+                    <span data-en="Home" data-fa="خانه">Home</span>
+                </a></li>
+                <li><a href="#about" class="nav-link flex items-center px-4 py-3 rounded-lg hover:bg-gray-700 transition-colors group">
+                    <i class="fas fa-user ltr:mr-3 rtl:ml-3 group-hover:text-primary transition-colors"></i>
+                    <span data-en="About" data-fa="درباره من">About</span>
+                </a></li>
+                <li><a href="#experience" class="nav-link flex items-center px-4 py-3 rounded-lg hover:bg-gray-700 transition-colors group">
+                    <i class="fas fa-briefcase ltr:mr-3 rtl:ml-3 group-hover:text-primary transition-colors"></i>
+                    <span data-en="Experience" data-fa="تجربه کاری">Experience</span>
+                </a></li>
+                <li><a href="#projects" class="nav-link flex items-center px-4 py-3 rounded-lg hover:bg-gray-700 transition-colors group">
+                    <i class="fas fa-code ltr:mr-3 rtl:ml-3 group-hover:text-primary transition-colors"></i>
+                    <span data-en="Projects" data-fa="پروژه‌ها">Projects</span>
+                </a></li>
+                <li><a href="#skills" class="nav-link flex items-center px-4 py-3 rounded-lg hover:bg-gray-700 transition-colors group">
+                    <i class="fas fa-cogs ltr:mr-3 rtl:ml-3 group-hover:text-primary transition-colors"></i>
+                    <span data-en="Skills" data-fa="مهارت‌ها">Skills</span>
+                </a></li>
+                <li><a href="#contact" class="nav-link flex items-center px-4 py-3 rounded-lg hover:bg-gray-700 transition-colors group">
+                    <i class="fas fa-envelope ltr:mr-3 rtl:ml-3 group-hover:text-primary transition-colors"></i>
+                    <span data-en="Contact" data-fa="تماس با من">Contact</span>
+                </a></li>
+            </ul>
+
+            <!-- Download Resume Button -->
+            <div class="mt-8">
+                <a href="tel:09227334601" class="block bg-gradient-to-r from-primary to-secondary text-white text-center py-3 px-4 rounded-lg hover:shadow-lg transition-all duration-300 text-base font-medium">
+                    <i class="fas fa-phone ltr:mr-2 rtl:ml-2"></i>
+                    <span data-en="Call Now" data-fa="تماس بگیرید">Call Now</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="lg:ml-72">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+            <!-- Animated Background -->
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+                <div class="absolute top-3/4 right-1/4 w-64 h-64 bg-secondary rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
+            </div>
+
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <div class="fade-in">
+                    <!-- Profile Image in Hero -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full overflow-hidden mb-8 floating shadow-2xl border-4 border-primary">
+                        <img src="https://pfst.cf2.poecdn.net/base/image/5dd8459992b1ea5de2cc6e3deb930eb3c2731c28e9155482f616a2fdab975248?w=960&h=1280" 
+                             alt="Matin Mokhtari" 
+                             class="w-full h-full profile-image">
+                    </div>
+                    
+                    <!-- Greeting -->
+                    <p class="text-lg sm:text-xl text-gray-300 mb-4" data-en="Hello, I'm" data-fa="سلام، من هستم">Hello, I'm</p>
+                    
+                    <!-- Name -->
+                    <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
+                        <span class="gradient-text">Matin Mokhtari</span>
+                    </h1>
+                    
+                    <!-- Role with Typing Animation -->
+                    <h2 class="hero-subtitle text-xl sm:text-2xl lg:text-3xl font-medium text-gray-300 mb-8">
+                        <span data-en="I'm a" data-fa="من یک">I'm a</span>
+                        <span id="typingText" class="text-primary font-semibold typing-animation">Digital Marketer</span>
+                    </h2>
+                    
+                    <!-- Description -->
+                    <p class="text-base sm:text-lg lg:text-xl max-w-3xl mx-auto text-gray-400 leading-relaxed mb-12 px-4" 
+                       data-en="Digital marketing expert with 8 years of experience in brand building, web development, and network security. CEO of Brandico and digital marketing specialist helping brands grow through modern digital strategies."
+                       data-fa="متخصص بازاریابی دیجیتال با ۸ سال تجربه در ساختن برند، توسعه وب و امنیت شبکه. مدیرعامل برندیکو و متخصص بازاریابی دیجیتال که به برندها کمک می‌کند تا از طریق استراتژی‌های مدرن دیجیتال رشد کنند.">
+                        Digital marketing expert with 8 years of experience in brand building, web development, and network security. CEO of Brandico and digital marketing specialist helping brands grow through modern digital strategies.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#projects" class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full text-base font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                            <span data-en="View My Work" data-fa="مشاهده کارهای من">View My Work</span>
+                        </a>
+                        <a href="#contact" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-full text-base font-semibold transition-all duration-300">
+                            <span data-en="Get In Touch" data-fa="تماس با من">Get In Touch</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 lg:py-24 bg-gray-900">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="section-title text-3xl lg:text-4xl font-bold mb-4" data-en="About Me" data-fa="درباره من">About Me</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- Profile Image -->
+                    <div class="order-2 lg:order-1">
+                        <div class="relative">
+                            <div class="w-72 h-72 sm:w-80 sm:h-80 mx-auto rounded-3xl overflow-hidden floating shadow-2xl border-4 border-primary">
+                                <img src="https://pfst.cf2.poecdn.net/base/image/5dd8459992b1ea5de2cc6e3deb930eb3c2731c28e9155482f616a2fdab975248?w=960&h=1280" 
+                                     alt="Matin Mokhtari" 
+                                     class="w-full h-full profile-image">
+                            </div>
+                            <div class="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center text-2xl animate-bounce">
+                                🚀
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Content -->
+                    <div class="order-1 lg:order-2">
+                        <h3 class="text-2xl lg:text-3xl font-bold mb-6" 
+                            data-en="CEO & Digital Marketing Expert" 
+                            data-fa="مدیرعامل و متخصص بازاریابی دیجیتال">
+                            CEO & Digital Marketing Expert
+                        </h3>
+                        
+                        <p class="text-gray-300 text-base lg:text-lg leading-relaxed mb-8" 
+                           data-en="I'm Matin Mokhtari with 8 years of experience in digital marketing and brand building. As CEO of Brandico, I specialize in designing and implementing digital marketing strategies for brands. I have strong skills in paid advertising, SEO, social media, and website design. I've consulted for both local and international companies, managing various marketing projects to help brands grow through modern digital marketing tools."
+                           data-fa="من متین مختاری هستم با ۸ سال تجربه در بازاریابی دیجیتال و ساختن برند. به عنوان مدیرعامل برندیکو، در طراحی و پیاده‌سازی استراتژی‌های بازاریابی دیجیتال برای برندها تخصص دارم. مهارت‌های قوی در تبلیغات پولی، سئو، رسانه‌های اجتماعی و طراحی وب‌سایت دارم. برای شرکت‌های داخلی و بین‌المللی مشاوره داده‌ام و پروژه‌های مختلف بازاریابی را مدیریت کرده‌ام تا به برندها کمک کنم از طریق ابزارهای مدرن بازاریابی دیجیتال رشد کنند.">
+                            I'm Matin Mokhtari with 8 years of experience in digital marketing and brand building. As CEO of Brandico, I specialize in designing and implementing digital marketing strategies for brands. I have strong skills in paid advertising, SEO, social media, and website design. I've consulted for both local and international companies, managing various marketing projects to help brands grow through modern digital marketing tools.
+                        </p>
+
+                        <!-- Stats -->
+                        <div class="grid grid-cols-2 gap-6 mb-8">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">8+</div>
+                                <div class="text-gray-400 text-sm" data-en="Years Experience" data-fa="سال تجربه">Years Experience</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">100+</div>
+                                <div class="text-gray-400 text-sm" data-en="Projects Completed" data-fa="پروژه تکمیل شده">Projects Completed</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">50+</div>
+                                <div class="text-gray-400 text-sm" data-en="Happy Clients" data-fa="مشتری راضی">Happy Clients</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary mb-2">24/7</div>
+                                <div class="text-gray-400 text-sm" data-en="Support Available" data-fa="پشتیبانی در دسترس">Support Available</div>
+                            </div>
+                        </div>
+
+                        <!-- Languages -->
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-lg mb-4" data-en="Languages" data-fa="زبان‌ها">Languages</h4>
+                            
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium" data-en="Persian (Native)" data-fa="فارسی (مادری)">Persian (Native)</span>
+                                <span class="text-primary">100%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full skill-bar" style="width: 100%"></div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium" data-en="English (Professional)" data-fa="انگلیسی (حرفه‌ای)">English (Professional)</span>
+                                <span class="text-primary">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full skill-bar" style="width: 85%"></div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium" data-en="German (Limited)" data-fa="آلمانی (محدود)">German (Limited)</span>
+                                <span class="text-primary">40%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full skill-bar" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-16 lg:py-24 bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="section-title text-3xl lg:text-4xl font-bold mb-4" data-en="Work Experience" data-fa="تجربه کاری">Work Experience</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <!-- Experience Item 1 -->
+                    <div class="card-glass rounded-2xl p-6 lg:p-8 hover:shadow-2xl transition-all duration-300">
+                        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+                            <div class="mb-4 lg:mb-0">
+                                <h3 class="card-title text-xl lg:text-2xl font-bold text-primary mb-2">CEO</h3>
+                                <h4 class="text-lg lg:text-xl text-gray-300 mb-2">Brandico (برندیکو)</h4>
+                                <p class="text-gray-400 text-sm" data-en="Kerman, Iran" data-fa="کرمان، ایران">Kerman, Iran</p>
+                            </div>
+                            <div class="text-left lg:text-right">
+                                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium" data-en="July 2018 - Present (7 years)" data-fa="تیر ۱۳۹۷ - اکنون (۷ سال)">July 2018 - Present (7 years)</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-3 text-gray-300 text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary ltr:mr-3 rtl:ml-3 mt-1 flex-shrink-0"></i>
+                                <span data-en="Founded and managed Brandico, a leading digital marketing agency specializing in brand building and digital strategy"
+                                      data-fa="تأسیس و مدیریت برندیکو، یک آژانس پیشرو بازاریابی دیجیتال متخصص در ساخت برند و استراتژی دیجیتال">
+                                    Founded and managed Brandico, a leading digital marketing agency specializing in brand building and digital strategy
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary ltr:mr-3 rtl:ml-3 mt-1 flex-shrink-0"></i>
+                                <span data-en="Developed comprehensive digital marketing strategies for 50+ local and international brands"
+                                      data-fa="توسعه استراتژی‌های جامع بازاریابی دیجیتال برای بیش از ۵۰ برند داخلی و بین‌المللی">
+                                    Developed comprehensive digital marketing strategies for 50+ local and international brands
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary ltr:mr-3 rtl:ml-3 mt-1 flex-shrink-0"></i>
+                                <span data-en="Specialized in paid advertising, SEO optimization, social media management, and website design"
+                                      data-fa="تخصص در تبلیغات پولی، بهینه‌سازی سئو، مدیریت رسانه‌های اجتماعی و طراحی وب‌سایت">
+                                    Specialized in paid advertising, SEO optimization, social media management, and website design
+                                </span>
+                            </li>
+                        </ul>
+                        
+                        <div class="flex flex-wrap gap-2 mt-6 rtl:justify-start ltr:justify-start">
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">Digital Marketing</span>
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs">Brand Building</span>
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs">SEO</span>
+                            <span class="bg-orange-600 text-white px-3 py-1 rounded-full text-xs">Social Media</span>
+                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs">Web Design</span>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 2 -->
+                    <div class="card-glass rounded-2xl p-6 lg:p-8 hover:shadow-2xl transition-all duration-300">
+                        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+                            <div class="mb-4 lg:mb-0">
+                                <h3 class="card-title text-xl lg:text-2xl font-bold text-primary mb-2">Digital Marketing Specialist</h3>
+                                <h4 class="text-lg lg:text-xl text-gray-300 mb-2">RighTel</h4>
+                                <p class="text-gray-400 text-sm" data-en="Kerman, Iran" data-fa="کرمان، ایران">Kerman, Iran</p>
+                            </div>
+                            <div class="text-left lg:text-right">
+                                <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium" data-en="Feb 2021 - Present (4 years)" data-fa="بهمن ۱۳۹۹ - اکنون (۴ سال)">Feb 2021 - Present (4 years)</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-3 text-gray-300 text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary ltr:mr-3 rtl:ml-3 mt-1 flex-shrink-0"></i>
+                                <span data-en="Managing comprehensive digital marketing campaigns for RighTel telecommunications services in Kerman region"
+                                      data-fa="مدیریت کمپین‌های جامع بازاریابی دیجیتال برای خدمات مخابراتی رایتل در منطقه کرمان">
+                                    Managing comprehensive digital marketing campaigns for RighTel telecommunications services in Kerman region
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary ltr:mr-3 rtl:ml-3 mt-1 flex-shrink-0"></i>
+                                <span data-en="Increased brand awareness and customer acquisition through targeted digital strategies"
+                                      data-fa="افزایش آگاهی از برند و جذب مشتری از طریق استراتژی‌های هدفمند دیجیتال">
+                                    Increased brand awareness and customer acquisition through targeted digital strategies
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary ltr:mr-3 rtl:ml-3 mt-1 flex-shrink-0"></i>
+                                <span data-en="Collaborated with technical teams to optimize online presence and customer engagement"
+                                      data-fa="همکاری با تیم‌های فنی برای بهینه‌سازی حضور آنلاین و تعامل با مشتریان">
+                                    Collaborated with technical teams to optimize online presence and customer engagement
+                                </span>
+                            </li>
+                        </ul>
+                        
+                        <div class="flex flex-wrap gap-2 mt-6 rtl:justify-start ltr:justify-start">
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">Telecommunications</span>
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs">Campaign Management</span>
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs">Customer Acquisition</span>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 3 -->
+                    <div class="card-glass rounded-2xl p-6 lg:p-8 hover:shadow-2xl transition-all duration-300">
+                        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+                            <div class="mb-4 lg:mb-0">
+                                <h3 class="card-title text-xl lg:text-2xl font-bold text-primary mb-2">Web Developer</h3>
+                                <h4 class="text-lg lg:text-xl text-gray-300 mb-2">Mazandaran University of Science and Technology</h4>
+                                <p class="text-gray-400 text-sm" data-en="Mazandaran, Iran" data-fa="مازندران، ایران">Mazandaran, Iran</p>
+                            </div>
+                            <div class="text-left lg:text-right">
+                                <span class="bg-gray-600 text-white px-3 py-1 rounded-full text-sm font-medium" data-en="Jan 2022 - Dec 2022" data-fa="دی ۱۴۰۰ - آذر ۱۴۰۱">Jan 2022 - Dec 2022</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-3 text-gray-300 text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary ltr:mr-3 rtl:ml-3 mt-1 flex-shrink-0"></i>
+                                <span data-en="Developed and maintained official university websites with modern web technologies"
+                                      data-fa="توسعه و نگهداری وب‌سایت‌های رسمی دانشگاه با تکنولوژی‌های مدرن وب">
+                                    Developed and maintained official university websites with modern web technologies
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary ltr:mr-3 rtl:ml-3 mt-1 flex-shrink-0"></i>
+                                <span data-en="Implemented responsive design and user-friendly interfaces for better user experience"
+                                      data-fa="پیاده‌سازی طراحی ریسپانسیو و رابط‌های کاربرپسند برای تجربه کاربری بهتر">
+                                    Implemented responsive design and user-friendly interfaces for better user experience
+                                </span>
+                            </li>
+                        </ul>
+                        
+                        <div class="flex flex-wrap gap-2 mt-6 rtl:justify-start ltr:justify-start">
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">Web Development</span>
+                            <span class="bg-orange-600 text-white px-3 py-1 rounded-full text-xs">Responsive Design</span>
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs">UI/UX</span>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 4 -->
+                    <div class="card-glass rounded-2xl p-6 lg:p-8 hover:shadow-2xl transition-all duration-300">
+                        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+                            <div class="mb-4 lg:mb-0">
+                                <h3 class="card-title text-xl lg:text-2xl font-bold text-primary mb-2">Digital Marketing Manager</h3>
+                                <h4 class="text-lg lg:text-xl text-gray-300 mb-2">Multiple Companies</h4>
+                                <p class="text-gray-400 text-sm" data-en="Various Locations, Iran" data-fa="مکان‌های مختلف، ایران">Various Locations, Iran</p>
+                            </div>
+                            <div class="text-left lg:text-right">
+                                <span class="bg-gray-600 text-white px-3 py-1 rounded-full text-sm font-medium" data-en="2017 - 2021" data-fa="۱۳۹۶ - ۱۴۰۰">2017 - 2021</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-3 text-gray-300 text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary ltr:mr-3 rtl:ml-3 mt-1 flex-shrink-0"></i>
+                                <span data-en="Iranmall: E-commerce website development and digital marketing (2017-2021)"
+                                      data-fa="ایران‌مال: توسعه وب‌سایت تجارت الکترونیک و بازاریابی دیجیتال (۱۳۹۶-۱۴۰۰)">
+                                    Iranmall: E-commerce website development and digital marketing (2017-2021)
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary ltr:mr-3 rtl:ml-3 mt-1 flex-shrink-0"></i>
+                                <span data-en="Real Estate Vila & Mahdavi: Real estate digital marketing and lead generation (2018-2020)"
+                                      data-fa="ویلای املاک و مهدوی: بازاریابی دیجیتال املاک و تولید مشتری بالقوه (۱۳۹۷-۱۳۹۹)">
+                                    Real Estate Vila & Mahdavi: Real estate digital marketing and lead generation (2018-2020)
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary ltr:mr-3 rtl:ml-3 mt-1 flex-shrink-0"></i>
+                                <span data-en="19kala & Zima Darman: E-commerce and healthcare digital marketing strategies"
+                                      data-fa="۱۹کالا و زیما درمان: استراتژی‌های بازاریابی دیجیتال تجارت الکترونیک و بهداشت">
+                                    19kala & Zima Darman: E-commerce and healthcare digital marketing strategies
+                                </span>
+                            </li>
+                        </ul>
+                        
+                        <div class="flex flex-wrap gap-2 mt-6 rtl:justify-start ltr:justify-start">
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs">E-commerce</span>
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs">Real Estate</span>
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs">Healthcare</span>
+                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs">Lead Generation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 lg:py-24 bg-gray-900">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="section-title text-3xl lg:text-4xl font-bold mb-4" data-en="Featured Projects" data-fa="پروژه‌های منتخب">Featured Projects</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                    <p class="text-gray-400 max-w-2xl mx-auto text-base lg:text-lg" 
+                       data-en="Here are some of my recent projects that showcase my expertise in digital marketing and web development."
+                       data-fa="در اینجا برخی از پروژه‌های اخیر من که تخصص‌هایم در بازاریابی دیجیتال و توسعه وب را نشان می‌دهند.">
+                        Here are some of my recent projects that showcase my expertise in digital marketing and web development.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="card-glass rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center relative overflow-hidden">
+                            <i class="fas fa-rocket text-6xl text-white opacity-80"></i>
+                            <div class="absolute top-4 right-4 bg-white text-blue-600 px-2 py-1 rounded-full text-xs font-semibold">Featured</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="card-title text-xl font-bold mb-3" data-en="Brandico Agency" data-fa="آژانس برندیکو">Brandico Agency</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed" 
+                               data-en="Complete digital marketing agency platform with portfolio showcase, client management system, and comprehensive branding services."
+                               data-fa="پلتفرم کامل آژانس بازاریابی دیجیتال با نمایش نمونه کارها، سیستم مدیریت مشتری و خدمات جامع برندینگ.">
+                                Complete digital marketing agency platform with portfolio showcase, client management system, and comprehensive branding services.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-6 rtl:justify-start ltr:justify-start">
+                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">Branding</span>
+                                <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Digital Strategy</span>
+                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">Portfolio</span>
+                                <span class="bg-orange-600 text-white px-2 py-1 rounded text-xs">Management</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <div class="flex rtl:space-x-reverse space-x-3">
+                                    <a href="#" class="text-primary hover:text-secondary transition-colors" title="Website">
+                                        <i class="fas fa-globe text-xl"></i>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-secondary transition-colors" title="Case Study">
+                                        <i class="fas fa-external-link-alt text-xl"></i>
+                                    </a>
+                                </div>
+                                <span class="text-gray-500 text-xs" data-en="Current" data-fa="جاری">Current</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="card-glass rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center relative overflow-hidden">
+                            <i class="fas fa-signal text-6xl text-white opacity-80"></i>
+                            <div class="absolute top-4 right-4 bg-white text-green-600 px-2 py-1 rounded-full text-xs font-semibold">Active</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="card-title text-xl font-bold mb-3" data-en="RighTel Digital Campaign" data-fa="کمپین دیجیتال رایتل">RighTel Digital Campaign</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed" 
+                               data-en="Comprehensive digital marketing campaign for telecommunications services, including social media management, SEO optimization, and customer acquisition strategies."
+                               data-fa="کمپین جامع بازاریابی دیجیتال برای خدمات مخابراتی، شامل مدیریت رسانه‌های اجتماعی، بهینه‌سازی سئو و استراتژی‌های جذب مشتری.">
+                                Comprehensive digital marketing campaign for telecommunications services, including social media management, SEO optimization, and customer acquisition strategies.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-6 rtl:justify-start ltr:justify-start">
+                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">Telecom</span>
+                                <span class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">SEO</span>
+                                <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Social Media</span>
+                                <span class="bg-red-600 text-white px-2 py-1 rounded text-xs">Campaign</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <div class="flex rtl:space-x-reverse space-x-3">
+                                    <a href="#" class="text-primary hover:text-secondary transition-colors" title="Campaign Results">
+                                        <i class="fas fa-chart-line text-xl"></i>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-secondary transition-colors" title="Social Media">
+                                        <i class="fas fa-share-alt text-xl"></i>
+                                    </a>
+                                </div>
+                                <span class="text-gray-500 text-xs" data-en="2021 - Present" data-fa="۱۴۰۰ - اکنون">2021 - Present</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="card-glass rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center relative overflow-hidden">
+                            <i class="fas fa-university text-6xl text-white opacity-80"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="card-title text-xl font-bold mb-3" data-en="University Website Development" data-fa="توسعه وب‌سایت دانشگاه">University Website Development</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed" 
+                               data-en="Modern, responsive website development for Mazandaran University of Science and Technology with user-friendly interface and administrative features."
+                               data-fa="توسعه وب‌سایت مدرن و ریسپانسیو برای دانشگاه علوم و فناوری مازندران با رابط کاربرپسند و ویژگی‌های مدیریتی.">
+                                Modern, responsive website development for Mazandaran University of Science and Technology with user-friendly interface and administrative features.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-6 rtl:justify-start ltr:justify-start">
+                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">Web Development</span>
+                                <span class="bg-orange-600 text-white px-2 py-1 rounded text-xs">Responsive</span>
+                                <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">UI/UX</span>
+                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">Academic</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <div class="flex rtl:space-x-reverse space-x-3">
+                                    <a href="#" class="text-primary hover:text-secondary transition-colors" title="Website">
+                                        <i class="fas fa-globe text-xl"></i>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-secondary transition-colors" title="Code">
+                                        <i class="fas fa-code text-xl"></i>
+                                    </a>
+                                </div>
+                                <span class="text-gray-500 text-xs" data-en="2022" data-fa="۱۴۰۱">2022</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="card-glass rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="h-48 bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center relative overflow-hidden">
+                            <i class="fas fa-shopping-cart text-6xl text-white opacity-80"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="card-title text-xl font-bold mb-3" data-en="Iranmall E-commerce" data-fa="تجارت الکترونیک ایران‌مال">Iranmall E-commerce</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed" 
+                               data-en="Complete e-commerce platform development and digital marketing strategy implementation for one of Iran's leading online marketplaces."
+                               data-fa="توسعه پلتفرم کامل تجارت الکترونیک و پیاده‌سازی استراتژی بازاریابی دیجیتال برای یکی از بازارهای آنلاین پیشرو ایران.">
+                                Complete e-commerce platform development and digital marketing strategy implementation for one of Iran's leading online marketplaces.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-6 rtl:justify-start ltr:justify-start">
+                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">E-commerce</span>
+                                <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Marketplace</span>
+                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">Digital Marketing</span>
+                                <span class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">Strategy</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <div class="flex rtl:space-x-reverse space-x-3">
+                                    <a href="#" class="text-primary hover:text-secondary transition-colors" title="Website">
+                                        <i class="fas fa-shopping-cart text-xl"></i>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-secondary transition-colors" title="Case Study">
+                                        <i class="fas fa-chart-bar text-xl"></i>
+                                    </a>
+                                </div>
+                                <span class="text-gray-500 text-xs" data-en="2017-2021" data-fa="۱۳۹۶-۱۴۰۰">2017-2021</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="card-glass rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="h-48 bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center relative overflow-hidden">
+                            <i class="fas fa-home text-6xl text-white opacity-80"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="card-title text-xl font-bold mb-3" data-en="Real Estate Digital Marketing" data-fa="بازاریابی دیجیتال املاک">Real Estate Digital Marketing</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed" 
+                               data-en="Comprehensive digital marketing campaigns for real estate companies including lead generation, social media management, and property showcase websites."
+                               data-fa="کمپین‌های جامع بازاریابی دیجیتال برای شرکت‌های املاک شامل تولید مشتری بالقوه، مدیریت رسانه‌های اجتماعی و وب‌سایت‌های نمایش ملک.">
+                                Comprehensive digital marketing campaigns for real estate companies including lead generation, social media management, and property showcase websites.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-6 rtl:justify-start ltr:justify-start">
+                                <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Real Estate</span>
+                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">Lead Generation</span>
+                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">Property Marketing</span>
+                                <span class="bg-orange-600 text-white px-2 py-1 rounded text-xs">Social Media</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <div class="flex rtl:space-x-reverse space-x-3">
+                                    <a href="#" class="text-primary hover:text-secondary transition-colors" title="Portfolio">
+                                        <i class="fas fa-images text-xl"></i>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-secondary transition-colors" title="Results">
+                                        <i class="fas fa-chart-line text-xl"></i>
+                                    </a>
+                                </div>
+                                <span class="text-gray-500 text-xs" data-en="2018-2020" data-fa="۱۳۹۷-۱۳۹۹">2018-2020</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="card-glass rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="h-48 bg-gradient-to-br from-yellow-500 to-red-600 flex items-center justify-center relative overflow-hidden">
+                            <i class="fas fa-medkit text-6xl text-white opacity-80"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="card-title text-xl font-bold mb-3" data-en="Healthcare Digital Solutions" data-fa="راه‌حل‌های دیجیتال بهداشت">Healthcare Digital Solutions</h3>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed" 
+                               data-en="Digital marketing and web development solutions for healthcare companies including patient engagement, online appointment systems, and health information portals."
+                               data-fa="راه‌حل‌های بازاریابی دیجیتال و توسعه وب برای شرکت‌های بهداشتی شامل تعامل با بیمار، سیستم‌های نوبت‌دهی آنلاین و پورتال‌های اطلاعات سلامت.">
+                                Digital marketing and web development solutions for healthcare companies including patient engagement, online appointment systems, and health information portals.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-6 rtl:justify-start ltr:justify-start">
+                                <span class="bg-red-600 text-white px-2 py-1 rounded text-xs">Healthcare</span>
+                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">Patient Care</span>
+                                <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Online Systems</span>
+                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">Health Tech</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <div class="flex rtl:space-x-reverse space-x-3">
+                                    <a href="#" class="text-primary hover:text-secondary transition-colors" title="Case Study">
+                                        <i class="fas fa-file-medical text-xl"></i>
+                                    </a>
+                                    <a href="#" class="text-primary hover:text-secondary transition-colors" title="Solutions">
+                                        <i class="fas fa-heartbeat text-xl"></i>
+                                    </a>
+                                </div>
+                                <span class="text-gray-500 text-xs" data-en="2017-2019" data-fa="۱۳۹۶-۱۳۹۸">2017-2019</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View More Button -->
+                <div class="text-center mt-12">
+                    <a href="https://matinmok.github.io/cv-site/" target="_blank" class="inline-flex items-center bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <span data-en="Visit Portfolio Website" data-fa="مشاهده وب‌سایت نمونه کارها">Visit Portfolio Website</span>
+                        <i class="fas fa-external-link-alt ltr:ml-2 rtl:mr-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 lg:py-24 bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="section-title text-3xl lg:text-4xl font-bold mb-4" data-en="Skills & Expertise" data-fa="مهارت‌ها و تخصص‌ها">Skills & Expertise</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                    <p class="text-gray-400 max-w-2xl mx-auto text-base lg:text-lg" 
+                       data-en="Here are my core competencies in digital marketing, web development, and network security."
+                       data-fa="در اینجا صلاحیت‌های اصلی من در بازاریابی دیجیتال، توسعه وب و امنیت شبکه آمده است.">
+                        Here are my core competencies in digital marketing, web development, and network security.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Digital Marketing Skills -->
+                    <div class="card-glass rounded-2xl p-6 hover:shadow-2xl transition-all duration-300">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-bullhorn text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold" data-en="Digital Marketing" data-fa="بازاریابی دیجیتال">Digital Marketing</h3>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium" data-en="SEO & SEM" data-fa="سئو و بهینه سازی">SEO & SEM</span>
+                                    <span class="text-primary">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full skill-bar" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium" data-en="Social Media Marketing" data-fa="بازاریابی رسانه‌های اجتماعی">Social Media Marketing</span>
+                                    <span class="text-primary">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full skill-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium" data-en="Paid Advertising" data-fa="تبلیغات پولی">Paid Advertising</span>
+                                    <span class="text-primary">88%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full skill-bar" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium" data-en="Content Marketing" data-fa="بازاریابی محتوایی">Content Marketing</span>
+                                    <span class="text-primary">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full skill-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Web Development Skills -->
+                    <div class="card-glass rounded-2xl p-6 hover:shadow-2xl transition-all duration-300">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-code text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold" data-en="Web Development" data-fa="توسعه وب">Web Development</h3>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">HTML/CSS/JS</span>
+                                    <span class="text-primary">92%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-green-500 to-blue-600 h-2 rounded-full skill-bar" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium" data-en="Responsive Design" data-fa="طراحی ریسپانسیو">Responsive Design</span>
+                                    <span class="text-primary">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-green-500 to-blue-600 h-2 rounded-full skill-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">WordPress/CMS</span>
+                                    <span class="text-primary">88%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-green-500 to-blue-600 h-2 rounded-full skill-bar" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium" data-en="E-commerce Development" data-fa="توسعه تجارت الکترونیک">E-commerce Development</span>
+                                    <span class="text-primary">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-green-500 to-blue-600 h-2 rounded-full skill-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Network Security Skills -->
+                    <div class="card-glass rounded-2xl p-6 hover:shadow-2xl transition-all duration-300">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-shield-alt text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold" data-en="Network Security" data-fa="امنیت شبکه">Network Security</h3>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium" data-en="Cybersecurity" data-fa="امنیت سایبری">Cybersecurity</span>
+                                    <span class="text-primary">80%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-red-500 to-orange-600 h-2 rounded-full skill-bar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium" data-en="Network Configuration" data-fa="پیکربندی شبکه">Network Configuration</span>
+                                    <span class="text-primary">78%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-red-500 to-orange-600 h-2 rounded-full skill-bar" style="width: 78%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium" data-en="Firewall Management" data-fa="مدیریت فایروال">Firewall Management</span>
+                                    <span class="text-primary">75%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-red-500 to-orange-600 h-2 rounded-full skill-bar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium" data-en="Security Audits" data-fa="حسابرسی امنیتی">Security Audits</span>
+                                    <span class="text-primary">72%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-red-500 to-orange-600 h-2 rounded-full skill-bar" style="width: 72%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="mt-16">
+                    <h3 class="text-2xl font-bold text-center mb-8" data-en="Tools & Technologies" data-fa="ابزارها و تکنولوژی‌ها">Tools & Technologies</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="card-glass rounded-xl p-6 text-center">
+                            <i class="fab fa-google text-3xl text-blue-500 mb-4"></i>
+                            <h4 class="font-semibold mb-2">Google Ads & Analytics</h4>
+                            <p class="text-gray-400 text-sm" data-en="Advanced Campaign Management" data-fa="مدیریت پیشرفته کمپین">Advanced Campaign Management</p>
+                        </div>
+                        
+                        <div class="card-glass rounded-xl p-6 text-center">
+                            <i class="fab fa-facebook text-3xl text-blue-600 mb-4"></i>
+                            <h4 class="font-semibold mb-2">Meta Business Suite</h4>
+                            <p class="text-gray-400 text-sm" data-en="Facebook & Instagram Marketing" data-fa="بازاریابی فیسبوک و اینستاگرام">Facebook & Instagram Marketing</p>
+                        </div>
+                        
+                        <div class="card-glass rounded-xl p-6 text-center">
+                            <i class="fab fa-wordpress text-3xl text-blue-700 mb-4"></i>
+                            <h4 class="font-semibold mb-2">WordPress & CMS</h4>
+                            <p class="text-gray-400 text-sm" data-en="Website Development" data-fa="توسعه وب‌سایت">Website Development</p>
+                        </div>
+                        
+                        <div class="card-glass rounded-xl p-6 text-center">
+                            <i class="fas fa-chart-line text-3xl text-green-500 mb-4"></i>
+                            <h4 class="font-semibold mb-2">Analytics & Reporting</h4>
+                            <p class="text-gray-400 text-sm" data-en="Data-Driven Insights" data-fa="بینش‌های مبتنی بر داده">Data-Driven Insights</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 lg:py-24 bg-gray-900">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="section-title text-3xl lg:text-4xl font-bold mb-4" data-en="Get In Touch" data-fa="تماس با من">Get In Touch</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
+                    <p class="text-gray-400 max-w-2xl mx-auto text-base lg:text-lg" 
+                       data-en="Ready to grow your brand with effective digital marketing strategies? Let's discuss your project and create something amazing together!"
+                       data-fa="آماده رشد برند خود با استراتژی‌های مؤثر بازاریابی دیجیتال هستید؟ بیایید در مورد پروژه‌تان صحبت کنیم و با هم چیزی شگفت‌انگیز بسازیم!">
+                        Ready to grow your brand with effective digital marketing strategies? Let's discuss your project and create something amazing together!
+                    </p>
+                </div>
+
+                <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-8" data-en="Let's start your digital transformation" data-fa="بیایید تحول دیجیتال شما را شروع کنیم">Let's start your digital transformation</h3>
+                        
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-center rtl:space-x-reverse space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg" data-en="Email" data-fa="ایمیل">Email</h4>
+                                    <p class="text-gray-400">matinmok02@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center rtl:space-x-reverse space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg" data-en="Phone" data-fa="تلفن">Phone</h4>
+                                    <p class="text-gray-400" dir="ltr">+98 922 733 4601</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center rtl:space-x-reverse space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg" data-en="Location" data-fa="موقعیت">Location</h4>
+                                    <p class="text-gray-400" data-en="Kerman, Iran" data-fa="کرمان، ایران">Kerman, Iran</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center rtl:space-x-reverse space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg" data-en="Response Time" data-fa="زمان پاسخ">Response Time</h4>
+                                    <p class="text-gray-400" data-en="Within 2 hours" data-fa="ظرف ۲ ساعت">Within 2 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div>
+                            <h4 class="font-semibold text-lg mb-4" data-en="Connect with me" data-fa="با من در ارتباط باشید">Connect with me</h4>
+                            <div class="flex rtl:space-x-reverse space-x-4">
+                                <a href="https://linkedin.com/in/matinmokhtari" target="_blank" 
+                                   class="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-xl flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin text-white text-lg"></i>
+                                </a>
+                                <a href="https://matinmok.github.io/cv-site/" target="_blank" 
+                                   class="w-12 h-12 bg-gray-700 hover:bg-gray-600 rounded-xl flex items-center justify-center transition-colors">
+                                    <i class="fas fa-globe text-white text-lg"></i>
+                                </a>
+                                <a href="mailto:matinmok02@gmail.com" 
+                                   class="w-12 h-12 bg-red-600 hover:bg-red-700 rounded-xl flex items-center justify-center transition-colors">
+                                    <i class="fas fa-envelope text-white text-lg"></i>
+                                </a>
+                                <a href="tel:09227334601" 
+                                   class="w-12 h-12 bg-green-600 hover:bg-green-700 rounded-xl flex items-center justify-center transition-colors">
+                                    <i class="fas fa-phone text-white text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Call to Action -->
+                        <div class="mt-8 p-6 bg-gradient-to-r from-primary to-secondary rounded-2xl">
+                            <h4 class="font-bold text-lg mb-2" data-en="Free Consultation" data-fa="مشاوره رایگان">Free Consultation</h4>
+                            <p class="text-sm mb-4" data-en="Get a free 30-minute consultation about your digital marketing needs" data-fa="یک مشاوره ۳۰ دقیقه‌ای رایگان درباره نیازهای بازاریابی دیجیتال خود دریافت کنید">Get a free 30-minute consultation about your digital marketing needs</p>
+                            <a href="tel:09227334601" class="bg-white text-primary px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block">
+                                <span data-en="Call Now" data-fa="همین حالا تماس بگیرید">Call Now</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="card-glass rounded-2xl p-8">
+                        <form id="contactForm" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2" data-en="First Name" data-fa="نام">First Name</label>
+                                    <input type="text" required
+                                           class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl focus:border-primary focus:outline-none transition-colors text-base">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium mb-2" data-en="Last Name" data-fa="نام خانوادگی">Last Name</label>
+                                    <input type="text" required
+                                           class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl focus:border-primary focus:outline-none transition-colors text-base">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2" data-en="Email Address" data-fa="آدرس ایمیل">Email Address</label>
+                                <input type="email" required
+                                       class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl focus:border-primary focus:outline-none transition-colors text-base">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2" data-en="Service Needed" data-fa="خدمت مورد نیاز">Service Needed</label>
+                                <select required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl focus:border-primary focus:outline-none transition-colors text-base">
+                                    <option value="" data-en="Select a service" data-fa="یک خدمت انتخاب کنید">Select a service</option>
+                                    <option value="digital-marketing" data-en="Digital Marketing Strategy" data-fa="استراتژی بازاریابی دیجیتال">Digital Marketing Strategy</option>
+                                    <option value="web-development" data-en="Web Development" data-fa="توسعه وب">Web Development</option>
+                                    <option value="seo" data-en="SEO Optimization" data-fa="بهینه‌سازی سئو">SEO Optimization</option>
+                                    <option value="social-media" data-en="Social Media Management" data-fa="مدیریت رسانه‌های اجتماعی">Social Media Management</option>
+                                    <option value="branding" data-en="Brand Building" data-fa="ساخت برند">Brand Building</option>
+                                    <option value="consultation" data-en="General Consultation" data-fa="مشاوره عمومی">General Consultation</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2" data-en="Project Details" data-fa="جزئیات پروژه">Project Details</label>
+                                <textarea rows="5" required
+                                          class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl focus:border-primary focus:outline-none transition-colors resize-none text-base"
+                                          data-en="Tell me about your project, goals, and how I can help you..."
+                                          data-fa="درباره پروژه‌تان، اهدافتان و اینکه چگونه می‌توانم به شما کمک کنم، بگویید..."
+                                          placeholder="Tell me about your project, goals, and how I can help you..."></textarea>
+                            </div>
+                            
+                            <button type="submit" 
+                                    class="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 rounded-xl font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-base">
+                                <span data-en="Send Message & Get Quote" data-fa="ارسال پیام و دریافت قیمت">Send Message & Get Quote</span>
+                                <i class="fas fa-paper-plane ltr:ml-2 rtl:mr-2"></i>
+                            </button>
+                        </form>
+                        
+                        <!-- Form Note -->
+                        <div class="mt-6 p-4 bg-blue-500/10 border border-blue-500/20 rounded-xl">
+                            <p class="text-blue-300 text-sm" data-en="📧 Form submissions will be sent directly to matinmok02@gmail.com. You'll receive a response within 2 hours." data-fa="📧 پیام‌های فرم مستقیماً به matinmok02@gmail.com ارسال می‌شود. پاسخ را ظرف ۲ ساعت دریافت خواهید کرد.">
+                                📧 Form submissions will be sent directly to matinmok02@gmail.com. You'll receive a response within 2 hours.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8 border-t border-gray-700 lg:ml-72">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-400 text-sm" 
+                       data-en="© 2025 Matin Mokhtari. All rights reserved."
+                       data-fa="© 2025 متین مختاری. تمامی حقوق محفوظ است.">
+                        © 2025 Matin Mokhtari. All rights reserved.
+                    </p>
+                </div>
+                
+                <div class="flex items-center rtl:space-x-reverse space-x-4">
+                    <span class="text-gray-400 text-sm" data-en="Digital Marketing Expert" data-fa="متخصص بازاریابی دیجیتال">Digital Marketing Expert</span>
+                    <span class="text-primary">🚀</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Management
+        let currentLanguage = 'en';
+        
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'fa' : 'en';
+            
+            // Update all data attributes
+            const elements = document.querySelectorAll('[data-en][data-fa]');
+            elements.forEach(element => {
+                const newText = element.getAttribute(`data-${currentLanguage}`);
+                if (element.tagName === 'INPUT' && element.placeholder) {
+                    element.placeholder = newText;
+                } else if (element.tagName === 'TEXTAREA' && element.placeholder) {
+                    element.placeholder = newText;
+                } else {
+                    element.textContent = newText;
+                }
+            });
+            
+            // Update HTML attributes
+            const html = document.documentElement;
+            const body = document.body;
+            const langText = document.getElementById('langText');
+            
+            if (currentLanguage === 'fa') {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'fa');
+                body.classList.remove('font-english');
+                body.classList.add('font-persian');
+                langText.textContent = 'English';
+                
+                // Update typing animation for Persian
+                typingTexts = [
+                    "بازاریاب دیجیتال",
+                    "توسعه‌دهنده وب",
+                    "متخصص امنیت شبکه",
+                    "مدیرعامل برندیکو"
+                ];
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+                body.classList.remove('font-persian');
+                body.classList.add('font-english');
+                langText.textContent = 'فارسی';
+                
+                // Update typing animation for English
+                typingTexts = [
+                    "Digital Marketer",
+                    "Web Developer",
+                    "Network Security Expert",
+                    "CEO of Brandico"
+                ];
+            }
+            
+            // Reset typing animation
+            currentTextIndex = 0;
+            currentCharIndex = 0;
+            isDeleting = false;
+        }
+        
+        // Event Listeners
+        document.getElementById('languageToggle').addEventListener('click', toggleLanguage);
+        
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarIcon = mobileMenuToggle.querySelector('i');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+            sidebarIcon.classList.toggle('fa-bars');
+            sidebarIcon.classList.toggle('fa-times');
+        });
+        
+        // Close mobile menu when clicking on nav links
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 1024) {
+                    sidebar.classList.add('-translate-x-full');
+                    sidebarIcon.classList.add('fa-bars');
+                    sidebarIcon.classList.remove('fa-times');
+                }
+            });
+        });
+        
+        // Typing Animation
+        let typingTexts = [
+            "Digital Marketer",
+            "Web Developer", 
+            "Network Security Expert",
+            "CEO of Brandico"
+        ];
+        
+        let currentTextIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typingText');
+        
+        function typeText() {
+            const currentText = typingTexts[currentTextIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, currentCharIndex + 1);
+                currentCharIndex++;
+            }
+            
+            let typingSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && currentCharIndex === currentText.length) {
+                typingSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentTextIndex = (currentTextIndex + 1) % typingTexts.length;
+                typingSpeed = 500;
+            }
+            
+            setTimeout(typeText, typingSpeed);
+        }
+        
+        // Start typing animation
+        typeText();
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Contact Form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const button = this.querySelector('button[type="submit"]');
+            const buttonText = button.querySelector('span');
+            const originalText = buttonText.textContent;
+            
+            // Show loading state
+            buttonText.textContent = currentLanguage === 'en' ? 'Sending...' : 'در حال ارسال...';
+            button.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                buttonText.textContent = currentLanguage === 'en' ? 'Message Sent Successfully!' : 'پیام با موفقیت ارسال شد!';
+                button.classList.remove('from-primary', 'to-secondary');
+                button.classList.add('from-green-500', 'to-green-600');
+                
+                setTimeout(() => {
+                    buttonText.textContent = originalText;
+                    button.classList.remove('from-green-500', 'to-green-600');
+                    button.classList.add('from-primary', 'to-secondary');
+                    button.disabled = false;
+                    this.reset();
+                }, 3000);
+            }, 1500);
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections and cards
+        document.querySelectorAll('section, .card-glass').forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Initialize skill bars animation
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        bar.style.width = bar.style.width;
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('#skills .card-glass').forEach(card => {
+            skillObserver.observe(card);
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                if (window.innerWidth < 1024 && !sidebar.classList.contains('-translate-x-full')) {
+                    sidebar.classList.add('-translate-x-full');
+                    sidebarIcon.classList.add('fa-bars');
+                    sidebarIcon.classList.remove('fa-times');
+                }
+            }
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                sidebar.classList.remove('-translate-x-full');
+                sidebarIcon.classList.add('fa-bars');
+                sidebarIcon.classList.remove('fa-times');
+            }
+        });
+    </script>
+</body>
+</html>
