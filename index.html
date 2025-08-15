@@ -5,17 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matin Mokhtari | Digital Marketer & Web Developer</title>
     
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -73,7 +69,6 @@
             }
         }
         
-        /* RTL Improvements */
         [dir="rtl"] {
             text-align: right;
         }
@@ -96,7 +91,6 @@
             margin-left: auto !important; 
         }
         
-        /* فیکس فاصله‌های RTL */
         [dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) {
             --tw-space-x-reverse: 1;
             margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -121,7 +115,6 @@
             margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
         }
         
-        /* فیکس مارجین‌های RTL */
         [dir="rtl"] .mr-2 { margin-right: 0; margin-left: 0.5rem; }
         [dir="rtl"] .mr-3 { margin-right: 0; margin-left: 0.75rem; }
         [dir="rtl"] .mr-4 { margin-right: 0; margin-left: 1rem; }
@@ -129,11 +122,9 @@
         [dir="rtl"] .ml-3 { margin-left: 0; margin-right: 0.75rem; }
         [dir="rtl"] .ml-4 { margin-left: 0; margin-right: 1rem; }
         
-        /* فیکس فلکس در RTL */
         [dir="rtl"] .flex-row { flex-direction: row-reverse; }
         [dir="rtl"] .justify-between { justify-content: space-between; }
         
-        /* Mobile optimizations */
         @media (max-width: 768px) {
             .hero-title { font-size: 2.5rem; line-height: 1.2; }
             .hero-subtitle { font-size: 1.25rem; }
@@ -146,13 +137,11 @@
             }
         }
         
-        /* Navigation improvements */
         .nav-blur {
             backdrop-filter: blur(20px);
             background: rgba(17, 24, 39, 0.9);
         }
         
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -170,7 +159,6 @@
             background: #764ba2;
         }
         
-        /* Profile Image Styles */
         .profile-image {
             object-fit: cover;
             object-position: center;
@@ -197,21 +185,17 @@
 </head>
 
 <body class="bg-gray-900 text-white font-english overflow-x-hidden">
-    <!-- Language Toggle Button -->
     <button id="languageToggle" class="fixed top-4 right-4 z-50 bg-primary hover:bg-secondary text-white px-4 py-2 rounded-full shadow-lg transition-all duration-300 text-base">
         <i class="fas fa-language ltr:mr-2 rtl:ml-2"></i>
         <span id="langText">فارسی</span>
     </button>
 
-    <!-- Mobile Navigation Toggle -->
     <button id="mobileMenuToggle" class="fixed top-4 left-4 z-50 lg:hidden bg-gray-800 text-white p-3 rounded-full shadow-lg">
         <i class="fas fa-bars"></i>
     </button>
 
-    <!-- Navigation Sidebar -->
     <nav id="sidebar" class="fixed top-0 left-0 h-full w-72 bg-gray-800 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40 nav-blur">
         <div class="p-6 h-full overflow-y-auto">
-            <!-- Profile Section -->
             <div class="text-center mb-8 pt-4">
                 <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 floating shadow-2xl border-4 border-primary">
                     <img src="https://pfst.cf2.poecdn.net/base/image/5dd8459992b1ea5de2cc6e3deb930eb3c2731c28e9155482f616a2fdab975248?w=960&h=1280" 
@@ -221,7 +205,6 @@
                 <h3 class="text-xl font-bold mb-1">Matin Mokhtari</h3>
                 <p class="text-gray-400 text-sm mb-4" data-en="Digital Marketer & Web Developer" data-fa="بازاریاب دیجیتال و توسعه‌دهنده وب">Digital Marketer & Web Developer</p>
                 
-                <!-- Social Links with RTL Fix -->
                 <div class="flex justify-center rtl:space-x-reverse space-x-3">
                     <a href="https://linkedin.com/in/matinmokhtari" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
                         <i class="fab fa-linkedin text-lg"></i>
@@ -235,7 +218,6 @@
                 </div>
             </div>
 
-            <!-- Navigation Menu -->
             <ul class="space-y-2">
                 <li><a href="#home" class="nav-link flex items-center px-4 py-3 rounded-lg hover:bg-gray-700 transition-colors group">
                     <i class="fas fa-home ltr:mr-3 rtl:ml-3 group-hover:text-primary transition-colors"></i>
@@ -263,7 +245,6 @@
                 </a></li>
             </ul>
 
-            <!-- Download Resume Button -->
             <div class="mt-8">
                 <a href="tel:09227334601" class="block bg-gradient-to-r from-primary to-secondary text-white text-center py-3 px-4 rounded-lg hover:shadow-lg transition-all duration-300 text-base font-medium">
                     <i class="fas fa-phone ltr:mr-2 rtl:ml-2"></i>
@@ -273,11 +254,8 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main class="lg:ml-72">
-        <!-- Hero Section -->
         <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-            <!-- Animated Background -->
             <div class="absolute inset-0 opacity-20">
                 <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
                 <div class="absolute top-3/4 right-1/4 w-64 h-64 bg-secondary rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
@@ -285,7 +263,6 @@
 
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                 <div class="fade-in">
-                    <!-- Profile Image in Hero -->
                     <div class="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full overflow-hidden mb-8 floating shadow-2xl border-4 border-primary">
                         <img src="https://pfst.cf2.poecdn.net/base/image/5dd8459992b1ea5de2cc6e3deb930eb3c2731c28e9155482f616a2fdab975248?w=960&h=1280" 
                              alt="Matin Mokhtari" 
