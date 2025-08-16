@@ -163,6 +163,16 @@
             object-fit: cover;
             object-position: center;
         }
+        
+        .download-pulse {
+            animation: downloadPulse 2s infinite;
+        }
+        
+        @keyframes downloadPulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
     </style>
     
     <script>
@@ -248,7 +258,12 @@
                 </a></li>
             </ul>
 
-            <div class="mt-8">
+            <div class="mt-8 space-y-3">
+                <button id="sidebarDownloadResume" class="block w-full bg-green-600 hover:bg-green-700 text-white text-center py-3 px-4 rounded-lg hover:shadow-lg transition-all duration-300 text-base font-medium download-pulse">
+                    <i class="fas fa-download ltr:mr-2 rtl:ml-2"></i>
+                    <span data-en="Download Resume" data-fa="دانلود رزومه">Download Resume</span>
+                </button>
+                
                 <a href="tel:09227334601" class="block bg-gradient-to-r from-primary to-secondary text-white text-center py-3 px-4 rounded-lg hover:shadow-lg transition-all duration-300 text-base font-medium">
                     <i class="fas fa-phone ltr:mr-2 rtl:ml-2"></i>
                     <span data-en="Call Now" data-fa="تماس بگیرید">Call Now</span>
@@ -293,6 +308,10 @@
                         <a href="#projects" class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full text-base font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                             <span data-en="View My Work" data-fa="مشاهده کارهای من">View My Work</span>
                         </a>
+                        <button id="heroDownloadResume" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-base font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-download ltr:mr-2 rtl:ml-2"></i>
+                            <span data-en="Download Resume" data-fa="دانلود رزومه">Download Resume</span>
+                        </button>
                         <a href="#contact" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-full text-base font-semibold transition-all duration-300">
                             <span data-en="Get In Touch" data-fa="تماس با من">Get In Touch</span>
                         </a>
@@ -354,7 +373,7 @@
                             </div>
                         </div>
 
-                        <div class="space-y-4">
+                        <div class="space-y-4 mb-8">
                             <h4 class="font-bold text-lg mb-4" data-en="Languages" data-fa="زبان‌ها">Languages</h4>
                             
                             <div class="flex justify-between items-center">
@@ -381,6 +400,11 @@
                                 <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full skill-bar" style="width: 40%"></div>
                             </div>
                         </div>
+                        
+                        <button id="aboutDownloadResume" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-file-pdf ltr:mr-2 rtl:ml-2"></i>
+                            <span data-en="Download Full Resume" data-fa="دانلود رزومه کامل">Download Full Resume</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1073,9 +1097,15 @@
                         <div class="mt-8 p-6 bg-gradient-to-r from-primary to-secondary rounded-2xl">
                             <h4 class="font-bold text-lg mb-2" data-en="Free Consultation" data-fa="مشاوره رایگان">Free Consultation</h4>
                             <p class="text-sm mb-4" data-en="Get a free 30-minute consultation about your digital marketing needs" data-fa="یک مشاوره ۳۰ دقیقه‌ای رایگان درباره نیازهای بازاریابی دیجیتال خود دریافت کنید">Get a free 30-minute consultation about your digital marketing needs</p>
-                            <a href="tel:09227334601" class="bg-white text-primary px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block">
-                                <span data-en="Call Now" data-fa="همین حالا تماس بگیرید">Call Now</span>
-                            </a>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="tel:09227334601" class="bg-white text-primary px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex-1 text-center">
+                                    <span data-en="Call Now" data-fa="همین حالا تماس بگیرید">Call Now</span>
+                                </a>
+                                <button id="contactDownloadResume" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors flex-1">
+                                    <i class="fas fa-download ltr:mr-2 rtl:ml-2"></i>
+                                    <span data-en="Get Resume" data-fa="دریافت رزومه">Get Resume</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     
@@ -1161,6 +1191,104 @@
     </footer>
 
     <script>
+        // Resume content as base64 - you'll need to replace this with the actual PDF content
+        // For now, this creates a simple text-based resume that can be downloaded
+        function createResumeContent() {
+            const resumeText = `MATIN MOKHTARI
+Digital Marketer & Web Developer | Network Security Specialist
+
+Kerman, Iran | matinmok02@gmail.com | +98 922 733 4601
+LinkedIn: linkedin.com/in/matinmokhtari | Portfolio: matinmokhtarii.github.io/cv-site/
+
+PROFESSIONAL SUMMARY
+With 8 years of experience in digital marketing and brand building, I specialize in designing and implementing marketing strategies for both local and international companies. Strong expertise in SEO, paid advertising, social media, and website design. My mission is to help brands grow with modern digital tools.
+
+KEY SKILLS
+• Digital Marketing (SEO, SEM, Paid Ads, Social Media)
+• Web Design & Development  
+• Network Security
+
+PROFESSIONAL EXPERIENCE
+
+CEO — Brandico (2018 – Present)
+Leading branding and digital marketing projects for local and international clients.
+
+Digital Marketing Specialist — Rightel (2021 – Present)
+Managing digital marketing campaigns for telecom services in Kerman.
+
+Web Consultant — Mazandaran University of Science and Technology (2022)
+Website design and digital marketing consultation.
+
+Web & Marketing Specialist — Iranmall (2017 – 2021)
+Developed and managed digital marketing and web projects.
+
+Marketing Consultant — Real Estate Projects (2018 – 2020)
+Handled marketing and branding for property businesses.
+
+Digital Marketing Specialist — 19Kala (2018 – 2019)
+Led digital marketing projects for e-commerce business.
+
+Digital Marketing Specialist — Zima Darman (2017 – 2019)
+Executed digital marketing strategies and website projects.
+
+EDUCATION
+Islamic Azad University, Kerman Branch
+BSc in Computer Engineering
+
+LANGUAGES
+• English — Professional Working Proficiency
+• Persian — Native / Full Professional
+• German — Limited Working Proficiency`;
+
+            return resumeText;
+        }
+
+        function downloadResume() {
+            const resumeContent = createResumeContent();
+            const blob = new Blob([resumeContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Matin_Mokhtari_Resume.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            
+            // Show success message
+            showNotification(
+                currentLanguage === 'en' ? 'Resume downloaded successfully!' : 'رزومه با موفقیت دانلود شد!',
+                'success'
+            );
+        }
+
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-20 right-4 z-50 px-6 py-3 rounded-lg shadow-lg transition-all duration-300 transform translate-x-full ${
+                type === 'success' ? 'bg-green-600 text-white' : 'bg-red-600 text-white'
+            }`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Add event listeners for all download buttons
+        document.getElementById('heroDownloadResume').addEventListener('click', downloadResume);
+        document.getElementById('sidebarDownloadResume').addEventListener('click', downloadResume);
+        document.getElementById('aboutDownloadResume').addEventListener('click', downloadResume);
+        document.getElementById('contactDownloadResume').addEventListener('click', downloadResume);
+
         let currentLanguage = 'en';
         
         function toggleLanguage() {
